@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relatório Empresa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script> <!--Usar os comandos correspondentes aos arquivos para link corretamente, link = style.css / script src="script.js" para js-->
+</head>
+<body>
+
+<div class="container">
+    <h2>Sistema de Relatório</h2>
+
+    <form method="POST">
+
+        <label>Item:</label>
+        <input type="text" name="item" required>
+
+        <!--Criando uma função especifica junto com o Js para sempre manter os valores em R$ 00,00 dentro do input da linha 19 > 38-->
+        <label>Valor do Item:</label>
+        <div class="input-group">
+        <span>R$</span>
+        <input 
+            type="text"
+            name="valor_item"
+            id="valor_item"
+            placeholder="0,00"
+            required>
+        </div>
+
+        <label>Custo de Produção (por unidade):</label>
+        <div class="input-group">
+        <span>R$</span>
+        <input
+            type="text" 
+            name="custo_produto"
+            id="custo_produto"
+            placeholder="0,00"
+            required>
+        </div>
+
+        <label>Quantidade em Estoque:</label>
+        <input type="number" name="estoque" required>
+
+        <label>Quantidade Vendida:</label>
+        <input type="number" name="vendidos" required>
+
+        <label>Mês:</label>
+        <select name="mes">
+            <option>Janeiro</option>
+            <option>Fevereiro</option>
+            <option>Março</option>
+            <option>Abril</option>
+            <option>Maio</option>
+            <option>Junho</option>
+            <option>Julho</option>
+            <option>Agosto</option>
+            <option>Setembro</option>
+            <option>Outubro</option>
+            <option>Novembro</option>
+            <option>Dezembro</option>
+        </select>
+
+        <button type="submit">Gerar Planilha</button>
+
+        </form>
+    </div>
+</body>
+</html>
