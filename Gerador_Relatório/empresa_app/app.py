@@ -47,9 +47,9 @@ def criar_planilha(dados):
         bottom=Side(style='thin')
     )
     
-    # ======================
+   
     # TÍTULO PRINCIPAL
-    # ======================
+  
     ws.merge_cells("A1:F1")
     titulo = ws["A1"]
     titulo.value = "📊 RELATÓRIO DE DESEMPENHO COMERCIAL"
@@ -58,9 +58,9 @@ def criar_planilha(dados):
     titulo.fill = cor_titulo
     ws.row_dimensions[1].height = 35
     
-    # ======================
+
     # INFORMAÇÕES GERAIS
-    # ======================
+
     ws.merge_cells("A2:F2")
     subtitulo = ws["A2"]
     mes_ano = dados["mes"]
@@ -72,9 +72,9 @@ def criar_planilha(dados):
     
     ws.append([])
     
-    # ======================
+
     # INDICADORES RESUMO (KPI Cards)
-    # ======================
+
     ws.merge_cells("A4:C4")
     ws["A4"] = "📈 INDICADORES PRINCIPAIS"
     ws["A4"].font = Font(size=14, bold=True, color="2C3E50")
@@ -120,9 +120,9 @@ def criar_planilha(dados):
     
     linha_atual += 1
     
-    # ======================
+
     # TABELA DE ANÁLISE DETALHADA
-    # ======================
+
     ws.merge_cells(f"A{linha_atual}:F{linha_atual}")
     ws[f"A{linha_atual}"] = "📋 ANÁLISE DETALHADA"
     ws[f"A{linha_atual}"].font = Font(size=14, bold=True, color="2C3E50")
@@ -184,9 +184,9 @@ def criar_planilha(dados):
     
     linha_atual += len(dados_detalhados) + 2
     
-    # ======================
+ 
     # GRÁFICOS INFORMATIVOS
-    # ======================
+  
     # Título dos gráficos
     ws.merge_cells(f"A{linha_atual}:F{linha_atual}")
     ws[f"A{linha_atual}"] = "📊 ANÁLISE GRÁFICA"
@@ -256,9 +256,9 @@ def criar_planilha(dados):
     ws.add_chart(pie, f"A{linha_atual + 5}")
     ws.add_chart(bar_chart, f"D{linha_atual + 5}")
     
-    # ======================
+
     # ANÁLISE DE TENDÊNCIAS (simulada)
-    # ======================
+   
     linha_atual += 15
     
     ws.merge_cells(f"A{linha_atual}:F{linha_atual}")
@@ -308,9 +308,9 @@ def criar_planilha(dados):
             elif j == 2 and "⚠" in texto:
                 cell.font = Font(color="E74C3C", bold=True)
     
-    # ======================
+  
     # RODAPÉ
-    # ======================
+  
     linha_atual += 7
     ws.merge_cells(f"A{linha_atual}:F{linha_atual}")
     rodape = ws[f"A{linha_atual}"]
@@ -367,4 +367,5 @@ def index():
 
 
 if __name__ == "__main__":
+
     app.run(debug=True)
